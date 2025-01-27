@@ -26,3 +26,16 @@ export interface UserProfileProps {
       id: string;
    }>;
 }
+
+// types/spotify.ts
+
+export interface Track {
+   name: string;
+   artist: string;
+   album: string;
+   imageUrl: string;
+   previewUrl: string | null;
+   duration: string;
+}
+
+export type FetchStatus = "idle" | "loading" | "success" | "error";

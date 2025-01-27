@@ -15,6 +15,20 @@ async function seed() {
       await Promise.all([Blog.deleteMany({}), User.deleteMany({})]);
       console.log("🧹 Cleared existing data");
 
+      // Crear array de imágenes demo
+      const demoImages = [
+         "/demo1.jpeg",
+         "/demo2.jpeg",
+         "/demo3.jpeg",
+         "/demo4.jpeg",
+         "/demo5.jpeg",
+         "/demo6.jpeg",
+         "/demo7.jpeg",
+         "/demo8.jpeg",
+         "/demo9.jpeg",
+         "/demo10.jpeg",
+      ];
+
       // Seed blogs
       const blogs = [
          {
@@ -24,6 +38,7 @@ async function seed() {
                "Next.js is a powerful framework for React applications that provides features like server-side rendering and static site generation out of the box...",
             author: "John Doe",
             views: 0,
+            images: demoImages.slice(0, 6), // Primeras 6 imágenes
          },
          {
             title: "Understanding SSR vs CSR",
@@ -32,6 +47,7 @@ async function seed() {
                "Let's explore the differences between Server-Side Rendering and Client-Side Rendering. Each approach has its own benefits and trade-offs...",
             author: "Jane Smith",
             views: 0,
+            images: demoImages.slice(2, 8), // 6 imágenes desde la 3ra hasta la 8va
          },
          {
             title: "Working with MongoDB and Next.js",
@@ -39,6 +55,7 @@ async function seed() {
             content: "MongoDB is a popular choice for Next.js applications. In this post, we'll look at how to integrate MongoDB with Next.js...",
             author: "John Doe",
             views: 0,
+            images: demoImages.slice(4, 10), // Últimas 6 imágenes
          },
       ];
 

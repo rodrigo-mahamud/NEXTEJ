@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { ModeToggle } from "@/components/ui/mode-toggle";
+import Header from "@/components/Header";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = Geist({
    variable: "--font-geist-sans",
@@ -27,29 +26,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
          <body className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
             <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
                <div className='bg-background'>
-                  <header className='border-b bg-card'>
-                     <div className='container mx-auto flex h-16 items-center px-4'>
-                        <nav className='flex items-center space-x-4 lg:space-x-6'>
-                           <Button variant='link' asChild>
-                              <Link href='/'>Inicio</Link>
-                           </Button>
-                           <Button variant='link' asChild>
-                              <Link href='/blog'>blog</Link>
-                           </Button>
-                           <Button variant='link' asChild>
-                              <Link href='/dashboard'>dashboard</Link>
-                           </Button>
-                        </nav>
-                        <div className='ml-auto'>
-                           <ModeToggle />
-                        </div>
-                     </div>
-                  </header>
+                  <Header></Header>
                   <main className='container mx-auto px-6 '>{children}</main>
                   <footer className='border-t absolute bottom-0 w-full bg-card'>
                      <div className='container mx-auto py-4 text-center text-sm'>© 2025 Next.js Demo</div>
                   </footer>
                </div>
+               <Toaster />
             </ThemeProvider>
          </body>
       </html>
