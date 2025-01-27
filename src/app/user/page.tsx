@@ -25,7 +25,7 @@ export default async function UserList() {
                      <CardTitle>{user.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                     <p className='text-gray-600'>{user.bio}</p>
+                     <p className='text-foreground'>{user.bio}</p>
                      <Link href={`/user/${user._id}`} className='text-blue-500 hover:underline'>
                         View Profile
                      </Link>

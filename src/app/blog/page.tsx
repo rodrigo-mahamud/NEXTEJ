@@ -2,6 +2,7 @@ import connectDB from "@/lib/mongodb";
 import { Blog } from "@/models/Blog";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { IBlog } from "@/types/types";
 
 export const revalidate = 60; // Revalidate every 60 seconds
@@ -25,10 +26,10 @@ export default async function BlogList() {
                      <CardTitle>{blog.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                     <p className='text-gray-600 mb-4'>{blog.content.substring(0, 150)}...</p>
-                     <Link href={`/blog/${blog.slug}`} className='text-blue-500 hover:underline'>
-                        Read more
-                     </Link>
+                     <p className='text-muted-foreground mb-4'>{blog.content.substring(0, 150)}...</p>
+                     <Button asChild variant='secondary'>
+                        <Link href={`/blog/${blog.slug}`}>Read more</Link>
+                     </Button>
                   </CardContent>
                </Card>
             ))}

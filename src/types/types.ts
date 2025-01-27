@@ -16,3 +16,13 @@ export interface IUser {
    role: string;
    lastLogin: Date;
 }
+export interface BlogPostProps {
+   params: Promise<{
+      slug: string;
+   }>;
+}
+export interface UserProfileProps {
+   params: Promise<{
+      id: string;
+   }>;
+}

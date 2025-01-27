@@ -24,11 +24,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
    return (
       <html lang='es' suppressHydrationWarning>
-         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+         <body className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
             <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
-               <div className='min-h-screen bg-background'>
-                  <header className='border-b'>
-                     <div className='container flex h-16 items-center px-4'>
+               <div className='bg-background'>
+                  <header className='border-b bg-card'>
+                     <div className='container mx-auto flex h-16 items-center px-4'>
                         <nav className='flex items-center space-x-4 lg:space-x-6'>
                            <Button variant='link' asChild>
                               <Link href='/'>Inicio</Link>
@@ -45,9 +45,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         </div>
                      </div>
                   </header>
-                  <main className='container py-6'>{children}</main>
-                  <footer className='border-t'>
-                     <div className='container py-4 text-center text-sm'>© 2025 Next.js Demo</div>
+                  <main className='container mx-auto px-6 '>{children}</main>
+                  <footer className='border-t absolute bottom-0 w-full bg-card'>
+                     <div className='container mx-auto py-4 text-center text-sm'>© 2025 Next.js Demo</div>
                   </footer>
                </div>
             </ThemeProvider>
