@@ -1,0 +1,18 @@
+export interface IBlog {
+   _id: string;
+   title: string;
+   slug: string;
+   content: string;
+   author: string;
+   createdAt: Date;
+   views: number;
+}
+
+export interface IUser {
+   _id: string;
+   name: string;
+   email: string;
+   bio: string;
+   role: string;
+   lastLogin: Date;
+}
