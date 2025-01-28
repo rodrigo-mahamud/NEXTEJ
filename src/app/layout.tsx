@@ -27,8 +27,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
                <div className='bg-background'>
                   <Header></Header>
-                  <main className='container mx-auto px-6 '>{children}</main>
-                  <footer className='border-t absolute bottom-0 w-full bg-card'>
+                  <main className='container mx-auto px-6 min-h-screen'>{children}</main>
+                  <footer className='border-t w-full bg-card'>
                      <div className='container mx-auto py-4 text-center text-sm'>© 2025 Next.js Demo</div>
                   </footer>
                </div>

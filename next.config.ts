@@ -7,9 +7,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 const nextConfig: NextConfig = {
    experimental: {
-      turbo: {
-         // ...
-      },
+      ppr: true,
    },
 };
 

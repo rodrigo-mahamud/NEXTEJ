@@ -2,7 +2,7 @@
 "use server";
 
 import { Track } from "@/types/types";
-
+import { unstable_noStore as noStore } from "next/cache";
 async function getAccessToken(): Promise<string> {
    const clientId = process.env.SPOTIFY_CLIENT_ID;
    const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -38,6 +38,7 @@ async function getAccessToken(): Promise<string> {
 }
 
 export async function getRandomTrack(): Promise<Track> {
+   noStore();
    try {
       const accessToken = await getAccessToken();
       const randomOffset = Math.floor(Math.random() * 50);
@@ -50,12 +51,11 @@ export async function getRandomTrack(): Promise<Track> {
          market: "ES",
       });
 
-      const url = `https://api.spotify.com/v1/search?${searchParams.toString()}`;
-
-      const response = await fetch(url, {
+      const response = await fetch(`https://api.spotify.com/v1/search?${searchParams.toString()}`, {
          headers: {
             Authorization: `Bearer ${accessToken}`,
          },
+         cache: "no-store",
       });
 
       if (!response.ok) {

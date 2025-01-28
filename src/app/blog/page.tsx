@@ -4,8 +4,9 @@ import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { IBlog } from "@/types/types";
+import { RevalidateButton } from "@/components/RevalidateButton";
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const revalidate = 3600; // Revalidate every 60 seconds
 
 async function getBlogs() {
    await connectDB();
@@ -20,6 +21,7 @@ export default async function BlogList() {
       <div className='container mx-auto p-6'>
          <h1 className='text-3xl font-bold mb-6'>Blog Posts (ISR Example)</h1>
          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+            <RevalidateButton path='/blog' label='Refresh Posts' />
             {blogs.map((blog: IBlog) => (
                <Card key={blog._id}>
                   <CardHeader>

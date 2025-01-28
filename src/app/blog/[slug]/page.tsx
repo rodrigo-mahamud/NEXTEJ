@@ -6,9 +6,10 @@ import { notFound } from "next/navigation";
 import { BlogPostProps } from "@/types/types";
 import SpotifyDemo from "@/components/Spotify";
 import Image from "next/image";
+import { SkeletonSpotify } from "@/components/SkeletonSpotify";
 
 export const experimental_ppr = true;
-
+export const revalidate = 60;
 export async function generateStaticParams() {
    await connectDB();
    const blogs = await Blog.find({}, { slug: 1 });
@@ -60,13 +61,13 @@ export default async function BlogPost({ params }: BlogPostProps) {
                   </div>
                </CardContent>
             </Card>
-            <Card className='col-span-3'>
+            <Card className='col-span-3 sticky top-0 h-fit'>
                <CardHeader>
                   <CardTitle>Spotify aleatorio</CardTitle>
                   <p className='text-sm text-muted-foreground'>By Tame Impala</p>
                </CardHeader>
                <CardContent>
-                  <Suspense fallback={<p>Loading view counter...</p>}>
+                  <Suspense fallback={<SkeletonSpotify></SkeletonSpotify>}>
                      <SpotifyDemo></SpotifyDemo>
                   </Suspense>
                </CardContent>
