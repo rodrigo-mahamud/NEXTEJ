@@ -71,7 +71,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
             <Card className='md:col-span-3 sticky top-0 h-fit'>
                <CardHeader>
                   <CardTitle>Spotify aleatorio</CardTitle>
-                  <p className='text-sm text-muted-foreground'>By Tame Impala</p>
+                  <p className='text-sm text-muted-foreground'>By Daft Punk</p>
                </CardHeader>
                <CardContent>
                   <Suspense fallback={<SkeletonSpotify></SkeletonSpotify>}>
