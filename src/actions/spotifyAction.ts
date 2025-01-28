@@ -45,7 +45,7 @@ export async function getRandomTrack(): Promise<Track> {
 
       const searchParams = new URLSearchParams({
          type: "track",
-         q: "artist:Tame Impala",
+         q: "artist: Daft Punk",
          offset: randomOffset.toString(),
          limit: "1",
          market: "ES",
