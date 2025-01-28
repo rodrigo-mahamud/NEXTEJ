@@ -1,7 +1,7 @@
-// scripts/seed.ts
 import { connect } from "mongoose";
 import { Blog } from "../src/models/Blog";
 import { User } from "../src/models/User";
+import { Metric } from "../src/models/Metric";
 import { config } from "dotenv";
 config();
 const MONGODB_URI = process.env.MONGODB_URI || " ";
@@ -12,7 +12,7 @@ async function seed() {
       console.log("🌱 Connected to MongoDB");
 
       // Clear existing data
-      await Promise.all([Blog.deleteMany({}), User.deleteMany({})]);
+      await Promise.all([Blog.deleteMany({}), User.deleteMany({}), Metric.deleteMany({})]);
       console.log("🧹 Cleared existing data");
 
       // Crear array de imágenes demo
@@ -83,8 +83,16 @@ async function seed() {
             lastLogin: new Date(),
          },
       ];
+      const metrics = [
+         { month: "January", desktop: 186 },
+         { month: "February", desktop: 305 },
+         { month: "March", desktop: 237 },
+         { month: "April", desktop: 73 },
+         { month: "May", desktop: 209 },
+         { month: "June", desktop: 214 },
+      ];
 
-      await Promise.all([Blog.insertMany(blogs), User.insertMany(users)]);
+      await Promise.all([Blog.insertMany(blogs), User.insertMany(users), Metric.insertMany(metrics)]);
 
       console.log("✅ Seed data inserted successfully");
       process.exit(0);
