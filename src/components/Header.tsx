@@ -8,14 +8,14 @@ export default function Header() {
       <header className='border-b bg-card'>
          <div className='container mx-auto flex h-16 items-center px-4'>
             <nav className='flex items-center space-x-4 lg:space-x-6'>
-               <Button variant='link' asChild>
+               <Button variant='secondary' asChild>
                   <Link href='/'>Inicio</Link>
                </Button>
-               <Button variant='link' asChild>
-                  <Link href='/blog'>blog</Link>
+               <Button variant='secondary' asChild>
+                  <Link href='/blog'>Blog</Link>
                </Button>
-               <Button variant='link' asChild>
-                  <Link href='/dashboard'>dashboard</Link>
+               <Button variant='secondary' asChild>
+                  <Link href='/dashboard'>Bashboard</Link>
                </Button>
             </nav>
             <div className='ml-auto'>

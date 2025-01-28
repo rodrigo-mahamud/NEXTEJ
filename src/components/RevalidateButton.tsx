@@ -36,7 +36,7 @@ export function RevalidateButton({ path, label = "Revalidate" }: RevalidateButto
    }
 
    return (
-      <Button onClick={handleRevalidate} disabled={isLoading} variant='outline'>
+      <Button onClick={handleRevalidate} disabled={isLoading} variant='default'>
          {isLoading ? <>Revalidating...</> : label}
       </Button>
    );

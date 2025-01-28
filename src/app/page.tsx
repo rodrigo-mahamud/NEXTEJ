@@ -9,7 +9,21 @@ export default function Home() {
          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
             <Card>
                <CardHeader>
-                  <CardTitle>Sección de Blog (ISR)</CardTitle>
+                  <CardTitle>Dashboard (APP & ROUTING)</CardTitle>
+               </CardHeader>
+               <CardContent>
+                  <p className='text-muted-foreground'>
+                     Ejemplo del routing de Next.js donde se muestra el uso de archivos especiales y su interacción. La sección implementa Server
+                     Components para el fetching de datos desde MongoDB, demostración de estados de carga con Suspense y manejo de errores.
+                  </p>
+                  <Button asChild variant='default' className='mt-4'>
+                     <Link href='/dashboard'>Ir al Dashboard</Link>
+                  </Button>
+               </CardContent>
+            </Card>
+            <Card>
+               <CardHeader>
+                  <CardTitle>Sección de Blog (ISR) - (PPR)</CardTitle>
                </CardHeader>
                <CardContent>
                   <p className='text-muted-foreground'>
