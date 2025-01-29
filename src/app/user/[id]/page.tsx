@@ -1,13 +1,10 @@
 // src/app/user/[id]/page.tsx
 import connectDB from "@/lib/mongodb";
 import { User } from "@/models/User";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 
 import { notFound } from "next/navigation";
 import { UserProfileProps } from "@/types/types";
-
-// Forzar SSR
-export const dynamic = "force-dynamic";
 
 async function getUser(id: string) {
    await connectDB();
@@ -29,6 +26,7 @@ export default async function UserProfile({ params }: UserProfileProps) {
          <Card>
             <CardHeader>
                <CardTitle>{user.name}</CardTitle>
+               <CardDescription>{id}</CardDescription>
             </CardHeader>
             <CardContent>
                <div className='space-y-4'>

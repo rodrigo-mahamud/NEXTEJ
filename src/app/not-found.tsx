@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 
 export default function DashboardNotFound() {
    return (
-      <Card className='mx-auto max-w-md'>
+      <Card className='mx-auto mt-20 max-w-md'>
          <CardHeader>
             <CardTitle className='text-center'>404 - Página no encontrada</CardTitle>
          </CardHeader>
@@ -15,9 +15,9 @@ export default function DashboardNotFound() {
          </CardContent>
          <CardFooter className='flex justify-center'>
             <Button asChild>
-               <Link href='/dashboard' className='flex items-center gap-2'>
+               <Link href='/' className='flex items-center gap-2'>
                   <MoveLeft className='h-4 w-4' />
-                  Volver al Dashboard
+                  Volver al inicio
                </Link>
             </Button>
          </CardFooter>

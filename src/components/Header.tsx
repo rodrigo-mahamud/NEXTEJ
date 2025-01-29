@@ -15,7 +15,10 @@ export default function Header() {
                   <Link href='/blog'>Blog</Link>
                </Button>
                <Button variant='secondary' asChild>
-                  <Link href='/dashboard'>Bashboard</Link>
+                  <Link href='/user'>Usuarios</Link>
+               </Button>
+               <Button variant='secondary' asChild>
+                  <Link href='/dashboard'>Dashboard</Link>
                </Button>
             </nav>
             <div className='ml-auto'>
