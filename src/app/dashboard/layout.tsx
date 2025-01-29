@@ -24,8 +24,8 @@ export default function DashboardLayout({
                   </TabsList>
                </Tabs>
             </nav>
-            <div className='col-span-1'>{team}</div>
-            <div className='col-span-1 md:col-span-2'>{analytics}</div>
+            {/* <div className='col-span-1'>{team}</div>
+            <div className='col-span-1 md:col-span-2'>{analytics}</div> */}
             {children}
          </div>
       </div>
